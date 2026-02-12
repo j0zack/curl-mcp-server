@@ -1,0 +1,65 @@
+{
+  "name": "@j0zack/curl-mcp-server",
+  "version": "1.0.1",
+  "description": "MCP server for executing curl commands and HTTP requests with full response data",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "curl-mcp-server": "dist/index.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "http-wrapper.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "start:http": "node http-wrapper.mjs",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "curl",
+    "http",
+    "api",
+    "http-client",
+    "rest",
+    "api-client",
+    "n8n",
+    "claude",
+    "anthropic"
+  ],
+  "author": "j0zack",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/j0zack/curl-mcp-server"
+  },
+  "homepage": "https://github.com/j0zack/curl-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/j0zack/curl-mcp-server/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "axios": "^1.7.9",
+    "curlconverter": "^4.3.2",
+    "express": "^4.21.2",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3",
+    "tsx": "^4.19.2"
+  }
+}
